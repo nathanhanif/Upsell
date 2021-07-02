@@ -1,6 +1,6 @@
-import 'package:brew_crew/models/user.dart';
-import 'package:brew_crew/screens/wrapper.dart';
-import 'package:brew_crew/services/auth.dart';
+import 'package:redo/models/user.dart';
+import 'package:redo/screens/wrapper.dart';
+import 'package:redo/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

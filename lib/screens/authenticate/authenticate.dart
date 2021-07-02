@@ -1,5 +1,6 @@
-import 'package:brew_crew/screens/authenticate/register.dart';
-import 'package:brew_crew/screens/authenticate/sign_in.dart';
+import 'package:redo/screens/authenticate/forgot.dart';
+import 'package:redo/screens/authenticate/register.dart';
+import 'package:redo/screens/authenticate/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class Authenticate extends StatefulWidget {

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1025184546519",
+    "project_id": "upsell-redo",
+    "storage_bucket": "upsell-redo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025184546519:android:7c4a1193ff3c384f6fba92",
+        "android_client_info": {
+          "package_name": "com.nathan.redo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025184546519-ov136t3miki6akregm8flktq4n1v21ee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV7KJGk_eYNogsByljUZuyRcEh1YSEVvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025184546519-ov136t3miki6akregm8flktq4n1v21ee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

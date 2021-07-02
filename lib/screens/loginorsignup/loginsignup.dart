@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:brew_crew/screens/authenticate/sign_in.dart';
-
-import 'package:brew_crew/screens/authenticate/register.dart';
+import 'package:redo/screens/authenticate/sign_in.dart';
+import 'package:redo/screens/authenticate/register.dart';
 
 void main() {
   runApp(LoginSignup());
@@ -30,96 +28,111 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      (Column(children: [
-        SizedBox(height: 0.0),
+    // return Stack(children: [
+    //   (Column(children: [
+    //     SizedBox(height: 0.0),
+    //     Container(
+    //       height: 752.0,
+    //       width: 600,
+    //       decoration: BoxDecoration(
+    //         image: DecorationImage(
+    //           image: AssetImage("images/mansit.jpg"),
+    //           fit: BoxFit.cover,
+    //         ),
+    //       ),
+    //     )
+    //   ])),
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: Stack(children: [
         Container(
-          height: 752.0,
-          width: 600,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("images/mansit.jpg"),
               fit: BoxFit.cover,
             ),
           ),
-        )
-      ])),
-      Scaffold(
-        backgroundColor: Colors.transparent,
-        body: Stack(children: [
-          Positioned(
-            top: 280,
+        ),
+        Positioned(
             left: 80,
+            top: 355,
             child: Container(
-                height: 53.0,
-                width: 210,
-                child: GestureDetector(
-                  onTap: () {
-                    Future push = Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignIn()));
-                  },
-                  child: Material(
-                    borderRadius: BorderRadius.circular(30.0),
-                    shadowColor: Colors.blueAccent,
-                    color: Colors.deepOrange.shade600,
-                    elevation: 7.0,
-                    child: Center(
-                      child: Text(
-                        'LOGIN',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 23.0,
-                            fontFamily: 'Montserrat'),
-                      ),
-                    ),
-                  ),
-                )),
-          ),
-          Positioned(
-            left: 80,
-            top: 350,
-            child: Container(
-                height: 51.0,
-                width: 202,
-                child: GestureDetector(
-                  onTap: () {
-                    Future push = Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Register()));
-                  },
-                  child: Material(
-                    borderRadius: BorderRadius.circular(30.0),
-                    shadowColor: Colors.blueAccent,
-                    color: Colors.grey.shade300,
-                    elevation: 7.0,
-                    child: Center(
-                      child: Text(
-                        'SIGNUP',
-                        style: TextStyle(
-                            color: Colors.deepOrange.shade600,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 23.0,
-                            fontFamily: 'Montserrat'),
-                      ),
-                    ),
-                  ),
-                )),
-          ),
-          Positioned(
-              left: 6,
-              top: 75,
-              child: Container(
-                height: 110.0,
-                width: 350,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("images/Upsell logo PNG.png"),
-                    fit: BoxFit.cover,
-                  ),
+              height: 53,
+              width: 210,
+              decoration: BoxDecoration(boxShadow: [
+                BoxShadow(
+                  color: Colors.orange.shade900.withOpacity(0.2),
+                  spreadRadius: 0.1,
+                  blurRadius: 15,
+                  offset: Offset(0, 6),
+                )
+              ]),
+              child: RaisedButton(
+                color: Colors.grey.shade300,
+                child: Text(
+                  "SIGNUP",
+                  style: TextStyle(
+                      color: Colors.deepOrange.shade600,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 22.0,
+                      fontFamily: 'Montserrat'),
                 ),
-              ))
-        ]),
-      )
-    ]);
+                onPressed: () {
+                  Future push = Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Register()));
+                },
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(58.0),
+                ),
+              ),
+            )),
+        Positioned(
+            left: 10,
+            top: 105,
+            child: Container(
+              height: 90.0,
+              width: 350,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("images/Upsell logo PNG.png"),
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+            )),
+        Positioned(
+            left: 80,
+            top: 285,
+            child: Container(
+              height: 53,
+              width: 210,
+              decoration: BoxDecoration(boxShadow: [
+                BoxShadow(
+                  color: Colors.blueAccent.withOpacity(0.5),
+                  spreadRadius: 0.1,
+                  blurRadius: 15,
+                  offset: Offset(0, 6),
+                )
+              ]),
+              child: RaisedButton(
+                color: Colors.deepOrange.shade600,
+                child: Text(
+                  "LOGIN",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 22.0,
+                      fontFamily: 'Montserrat'),
+                ),
+                onPressed: () {
+                  Future push = Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignIn()));
+                },
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(58.0),
+                ),
+              ),
+            )),
+      ]),
+    );
   }
 }

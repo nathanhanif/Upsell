@@ -1,4 +1,5 @@
-import 'package:brew_crew/models/user.dart';
+import 'package:redo/models/user.dart';
+import 'package:redo/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
@@ -38,6 +39,11 @@ class AuthService {
       return null;
     }
   }
+//send password
+
+  Future<void> sendPasswordResetEmail(String email) async {
+    return _auth.sendPasswordResetEmail(email: email);
+  }
 
 //register email password
 
@@ -46,6 +52,13 @@ class AuthService {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       FirebaseUser user = result.user;
+
+//create a new document for the user using uid
+      await DatabaseService(uid: user.uid)
+          .updateUserData('New User', 'None', 'Optional');
+      // await DatabaseService(uid: user.uid)
+      //  .updateUserData("0", "new crew member", 100);
+
       return _userFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
